@@ -17,6 +17,7 @@ def get_user_details():
 
 
 def save_to_users_csv(firstname, lastname, email, job_preference):
+    # Saves the users' information into a file
     with open('users.csv', 'a') as file:
         file.write(f"\n{firstname}, {lastname}, {email}, {job_preference}")
 
