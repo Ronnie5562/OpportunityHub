@@ -25,8 +25,6 @@ while True:
                 break
 
         else:
-            mentee = input('Do you need a mentor? ')
+            mentee = input('Do you need a mentor?')
             # function
-
-
-print('Thank you for joining opportunityHub')
+print('Welcome to the opportunity hub')
