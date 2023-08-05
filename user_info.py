@@ -8,6 +8,7 @@ def ask_for_action():
 
 
 def get_user_details():
+    # New users' personal information.
     firstname = input('Enter your first name: ')
     lastname = input('Enter your last name: ')
     email = input('Enter your email: ')
