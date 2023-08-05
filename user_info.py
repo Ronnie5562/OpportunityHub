@@ -55,13 +55,7 @@ def main():
         mentee_request = input('Do you need a mentor? [Yes / No]')
         # Function to handle mentee request
 
-<<<<<<< HEAD
-        else:
-            mentee = input('Do you need a mentor?')
-            # function
-print('Welcome to the opportunity hub')
-=======
-    print('Thank you for joining opportunityHub')
+    print('Welcome to the opportunity hub')
 
 
 if __name__ == "__main__":
@@ -69,4 +63,3 @@ if __name__ == "__main__":
 
 # Bernice, Akudbilla, b.akudbilla@alustudent.com, Data analyst
 # Ronald, Abimbola, r.abimbola@alustudent.com, Software engineer
->>>>>>> 4b9822697dce43c6f41ec1e05a25aff14c40f8dc
