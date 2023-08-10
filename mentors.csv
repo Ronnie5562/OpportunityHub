@@ -1,2 +1,3 @@
-FIRSTNAME, LASTNAME, EMAIL, JOB_PREFERENCES, EXPERIENCE_LEVEL
-Bernice, Akudbilla, b.akudbilla@alustudent.com, Data analyst, 10
+FIRSTNAME, LASTNAME, EMAIL, JOB_PREFERENCES, EXPERIENCE_LEVEL, PROFESSIONAL_DOMAIN
+Ronald, Abimbola, r.abimbola@alustudent.com, Machine Learning Engineer, 9, Technology (Tech)
+Justice, Chukwuonye, j.chukwuony@alustudent.com, Cyber security, 6, Science

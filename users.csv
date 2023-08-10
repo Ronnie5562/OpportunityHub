@@ -1,3 +1,3 @@
-FIRSTNAME, LASTNAME, EMAIL, JOB_PREFERENCES
-Bernice, Akudbilla, b.akudbilla@alustudent.com, Data analyst
-Ronald, Abimbola, r.abimbola@alustudent.com, Software engineer
+FIRSTNAME, LASTNAME, EMAIL, JOB_PREFERENCES, PROFESSIONAL_DOMAIN, PASSWORD
+Ronald, Abimbola, r.abimbola@alustudent.com, Machine Learning Engineer, Technology (Tech), starboy
+Justice, Chukwuonye, j.chukwuony@alustudent.com, Cyber security, Technology (Tech), Justice123
