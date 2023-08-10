@@ -37,6 +37,7 @@ def get_password():
 
 
 def get_user_details():
+    # New users' personal information.
     firstname = input('Enter your first name: ')
     lastname = input('Enter your last name: ')
     email = input('Enter your email: ')
@@ -46,7 +47,9 @@ def get_user_details():
     return firstname, lastname, email, job_preference, my_domain, password
 
 
+
 def save_to_users_csv(firstname, lastname, email, job_preference, my_domain, password):
+    # Saves the users' information into a file
     with open('users.csv', 'a') as file:
         file.write(
             f"\n{firstname}, {lastname}, {email}, {job_preference}, {my_domain}, {password}"
@@ -88,11 +91,13 @@ def main():
         mentee_request = input('Do you need a mentor? [Yes / No]')
         # Function to handle mentee request
 
-    print('Thank you for joining opportunityHub')
+    print('Welcome to the opportunity hub')
 
 
 if __name__ == "__main__":
     main()
 
+
+# Used for testing
 # Bernice, Akudbilla, b.akudbilla@alustudent.com, Data analyst
 # Ronald, Abimbola, r.abimbola@alustudent.com, Software engineer

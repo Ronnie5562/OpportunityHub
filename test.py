@@ -1,6 +1,1 @@
-name = 'Ronald'
-text = f'''
-How are you {name}
-'''
-
-print(text)
+# This file is used to test functions before inputing them to the main program.

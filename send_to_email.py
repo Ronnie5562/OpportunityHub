@@ -6,6 +6,7 @@ from os import getenv
 EMAIL_ADDRESS = getenv("EMAIL_USER")
 EMAIL_PASSWORD = getenv("EMAIL_PASS")
 
+
 def send_email(email, job_list, job_type):
     message = EmailMessage()
     message['Subject'] = f"{job_type} Jobs For You !!!"
@@ -24,7 +25,7 @@ def send_email(email, job_list, job_type):
             <a href="{job['url']}" target="_blank">Learn More</a>
         </div>
         """
-    
+
     styles = '''
     <style>
         body {
@@ -52,7 +53,7 @@ def send_email(email, job_list, job_type):
         }
     </style>
     '''
-    
+
     content = f'''
     <!DOCTYPE html>
     <html lang="en">
@@ -82,7 +83,6 @@ def send_email(email, job_list, job_type):
 
     message.add_alternative(content, subtype='html')
 
-
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
         smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
@@ -91,5 +91,5 @@ def send_email(email, job_list, job_type):
 
 if __name__ == "__main__":
     email = input('Enter your email: ')
-    
+
     send_email(email)

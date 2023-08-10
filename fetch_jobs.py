@@ -1,5 +1,6 @@
 import requests
 
+
 def get_jobs(position, country):
 	url = "https://indeed11.p.rapidapi.com/"
 
@@ -16,7 +17,7 @@ def get_jobs(position, country):
 	}
 
 	response = requests.post(url, json=payload, headers=headers)
- 
+
 	return response.json()
 
 	# print(response.json())
