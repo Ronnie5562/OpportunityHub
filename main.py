@@ -58,16 +58,18 @@ def get_mentors(domain):
 
         your_mentors_list = []
         for mentor in mentors_list:
-            if mentor[-1] == domain:
+            if domain == mentor[-1].strip("\n"):
                 your_mentors_list.append(mentor)
 
-            if your_mentors_list:
-                print(
-                    "Here's a list of mentors in your domain that are willing to mentor you")
-                for mentor in your_mentors_list:
-                    print(mentor)
-            else:
-                print("We currently don't have a mentor for you")
+        if your_mentors_list:
+            print(
+                "Here's a list of mentors in your domain that are willing to mentor you\n")
+            for mentor in your_mentors_list:
+                print([info.strip("\n") for info in mentor])
+        else:
+            print("""Oops, we currently don't have a mentor for you
+                     Check back later
+                """)
 
 
 logged_in = False

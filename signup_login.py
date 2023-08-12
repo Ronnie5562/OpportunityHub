@@ -14,12 +14,13 @@ def logIn(email, password):
         users_list = [arr.split(', ') for arr in users]
 
         for user in users_list:
-            if (user[2] == email and user[5] == password):
+            if (user[2] == email and user[5].strip("\n") == password):
                 current_user = user
                 suceess = True
                 break
             elif (user[2] == email):
                 status = 'Wrong Password'
+                break
             else:
                 status = 'User NOT found'
 

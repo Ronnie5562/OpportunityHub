@@ -21,7 +21,7 @@ def get_professional_domain():
         if domain_num in professional_domains.keys():
             domain = ''
             for x, y in professional_domains.items():
-                if x == domain_num:
+                if domain_num == x:
                     domain = y
 
             return domain
