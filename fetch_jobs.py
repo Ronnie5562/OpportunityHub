@@ -1,29 +1,28 @@
 import requests
-# this power fetches job opportunity
+# this file  fetches  job opportunity from the API's of job platforms and then sends it to users
 
 def get_jobs(position, country):
 	# this function fetches job opportunity
         url = "https://indeed11.p.rapidapi.com/"
 
-	payload = {
+payload = {
 		"search_terms": f"{position}",
 		"location": f"{country}",
 		"page": "1"
 	}
 
-	headers = {
+headers = {
 		"content-type": "application/json",
 		"X-RapidAPI-Key": "e3d24a42f3msh21f66de019442edp16dbadjsnbc611f49866a",
 		"X-RapidAPI-Host": "indeed11.p.rapidapi.com"
 	}
 
-	response = requests.post(url, json=payload, headers=headers)
-
-	return response.json()
+response = requests.post(url, json=payload, headers=headers)
+return response.json()
 
 	# print(response.json())
 
-
+#funtion to get information from user on which job opportunity they are looking for.
 if __name__ == "__main__":
 	position = input('What position are you looking for? ')
 	country = input('Which country do you need the job in? ')

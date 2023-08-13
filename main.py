@@ -40,7 +40,7 @@ def ask_for_action():
 
 #     jobs = get_jobs(position, country)
 #     print(jobs)
-
+# This functions helps us get user information  lsuch as their job preference and location preference in order to serve them with the right job
 
 def fetch_and_send_jobs():
     position = input('What position are you looking for? ')

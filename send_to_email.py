@@ -1,11 +1,11 @@
 import smtplib
 from email.message import EmailMessage
 from os import getenv
-
+#With this,the user will receive an email containing the job options they signed up for preventing the stress of going to search on site
 
 EMAIL_ADDRESS = getenv("EMAIL_USER")
 EMAIL_PASSWORD = getenv("EMAIL_PASS")
-
+#This the function to send email to user
 
 def send_email(email, job_list, job_type):
     message = EmailMessage()
