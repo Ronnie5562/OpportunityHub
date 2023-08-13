@@ -97,7 +97,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# Used for testing
-# Bernice, Akudbilla, b.akudbilla@alustudent.com, Data analyst
-# Ronald, Abimbola, r.abimbola@alustudent.com, Software engineer
