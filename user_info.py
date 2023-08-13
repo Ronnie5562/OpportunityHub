@@ -35,7 +35,7 @@ def get_password():
             return password
         print('Passwords do not match X')
 
-
+#This function takes user info
 def get_user_details():
     # New users' personal information.
     firstname = input('Enter your first name: ')
