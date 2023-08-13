@@ -2,7 +2,8 @@ import requests
 # this power fetches job opportunity
 
 def get_jobs(position, country):
-	url = "https://indeed11.p.rapidapi.com/"
+	# this function fetches job opportunity
+        url = "https://indeed11.p.rapidapi.com/"
 
 	payload = {
 		"search_terms": f"{position}",
