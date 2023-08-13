@@ -1,5 +1,5 @@
 import requests
-
+# this power fetches job opportunity
 
 def get_jobs(position, country):
 	url = "https://indeed11.p.rapidapi.com/"
