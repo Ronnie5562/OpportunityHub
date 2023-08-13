@@ -50,7 +50,7 @@ def fetch_and_send_jobs():
     email = input('Enter your email: ')
     send_email(email, job_list[:10], position)
 
-
+# this functions helps us to get mentors and to provide mentors to users
 def get_mentors(domain):
     with open('mentors.csv') as db:
         mentors = db.readlines()
