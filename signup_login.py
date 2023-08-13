@@ -1,6 +1,6 @@
 from user_info import main as user_info_main
 
-
+#this function helps user to sign up if this is their first time on the platform
 def signUp():
     user_info_main()
 
