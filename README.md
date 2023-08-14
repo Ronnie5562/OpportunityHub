@@ -10,3 +10,9 @@ others based on their specific job preferences. Additionally, the application ai
 and support in their career journey.
 
 OpportunityHub seeks to bridge the gap between job seekers and job platforms while fostering a supportive community for those embarking on their professional journey.
+
+Functionality:
+The menu-driven application is self-explanatory where choices are drawn out and prompts you to choose your next step, users who register themselves as mentors are stored in a basic database where they can be acccessed easily by users who request mentorship in different areas of work.
+
+A user is requested to sign up and create an account on OpportunityHub. After logging in to their account, they get to choose the area where they qualify and seek jobs in together with their preferred location. The user enters their e-mail, and in a blink of an eye, an e-mail with different job proposals is sent directly to them.
+
