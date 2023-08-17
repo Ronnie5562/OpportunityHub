@@ -1,3 +1,4 @@
+# from main import get_mentors
 def get_professional_domain():
     professional_domains = {
         "1": "Technology (Tech)",
@@ -90,6 +91,8 @@ def main():
     else:
         mentee_request = input('Do you need a mentor? [Yes / No]')
         # Function to handle mentee request
+        # my_domain = get_professional_domain()
+        # get_mentors(my_domain)
 
     print('Welcome to the opportunity hub')
 
