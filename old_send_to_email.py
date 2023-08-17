@@ -19,10 +19,10 @@ def send_email(email, job_list, job_type):
         job_listings += f"""\n
         <div class="job-listing">
             <h2>Job Title: {job['job_title']}</h2>
-            <h3>Company: {job['company_name']}</h3>
-            <p>Location: {job['job_location']}</p>
-            <p>Date Posted: {job['posted_date']}</p>
-            <a href="{job['job_url']}" target="_blank">Learn More</a>
+            <p>Company: {job['company_name']}</p>
+            <p>Location: {job['location']}</p>
+            <p>Description: {job['summary']}</p>
+            <a href="{job['url']}" target="_blank">Learn More</a>
         </div>
         """
 

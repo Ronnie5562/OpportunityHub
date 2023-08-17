@@ -2,7 +2,7 @@ import requests
 
 
 def get_jobs(position, country):
-	url = "https://indeed11.p.rapidapi.com/"
+	url = "https://linkedin-jobs-search.p.rapidapi.com/"
 
 	payload = {
 		"search_terms": f"{position}",
@@ -12,8 +12,8 @@ def get_jobs(position, country):
 
 	headers = {
 		"content-type": "application/json",
-		"X-RapidAPI-Key": "e3d24a42f3msh21f66de019442edp16dbadjsnbc611f49866a",
-		"X-RapidAPI-Host": "indeed11.p.rapidapi.com"
+		"X-RapidAPI-Key": "2e64f82d68msh8e13c521e228dfdp168c9ejsnf48b216288a9",
+		"X-RapidAPI-Host": "linkedin-jobs-search.p.rapidapi.com"
 	}
 
 	response = requests.post(url, json=payload, headers=headers)

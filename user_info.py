@@ -1,4 +1,6 @@
-# from main import get_mentors
+from insert_to_db import save_to_db
+
+
 def get_professional_domain():
     professional_domains = {
         "1": "Technology (Tech)",
@@ -33,8 +35,9 @@ def get_password():
         password = input('Enter a secret password: ')
         confirm_password = input('Confirm your password: ')
         if (password == confirm_password):
+            print('\033[32mPasswords match\033[0m')
             return password
-        print('Passwords do not match X')
+        print('\033[31mPasswords do not match X\033[0m')
 
 
 def get_user_details():
@@ -49,12 +52,12 @@ def get_user_details():
 
 
 
-def save_to_users_csv(firstname, lastname, email, job_preference, my_domain, password):
-    # Saves the users' information into a file
-    with open('users.csv', 'a') as file:
-        file.write(
-            f"\n{firstname}, {lastname}, {email}, {job_preference}, {my_domain}, {password}"
-        )
+# def save_to_users_csv(firstname, lastname, email, job_preference, my_domain, password):
+#     # Saves the users' information into a file
+#     with open('users.csv', 'a') as file:
+#         file.write(
+#             f"\n{firstname}, {lastname}, {email}, {job_preference}, {my_domain}, {password}"
+#         )
 
 
 def is_integer(value):
@@ -75,24 +78,21 @@ def get_experience_level():
 
 def main():
     firstname, lastname, email, job_preference, my_domain, password = get_user_details()
-    save_to_users_csv(firstname, lastname, email, job_preference, my_domain, password)
+    save_to_db(firstname, lastname, email, job_preference, my_domain, password=password, table="Users")
 
     experience_level = get_experience_level()
     if experience_level >= 5:
-        mentorship_request = input('Do you want to be a mentor? [Yes / No]')
+        mentorship_request = input('Do you want to be a mentor? [Yes / No]: ')
         if mentorship_request.lower() == 'yes':
             print('Welcome to the opportunityHub mentors platform')
             my_domain = get_professional_domain()
-            # Save mentor details similarly to "mentors.csv"
-            with open('mentors.csv', 'a') as file:
-                file.write(
-                    f"\n{firstname}, {lastname}, {email}, {job_preference}, {experience_level}, {my_domain}"
-                )
-    else:
-        mentee_request = input('Do you need a mentor? [Yes / No]')
-        # Function to handle mentee request
-        # my_domain = get_professional_domain()
-        # get_mentors(my_domain)
+            # Save mentor details similarly to the Mentors table"
+            save_to_db(firstname, lastname, email, job_preference, my_domain, exp_level=experience_level, table="Mentors")
+            
+            # with open('mentors.csv', 'a') as file:
+            #     file.write(
+            #         f"\n{firstname}, {lastname}, {email}, {job_preference}, {experience_level}, {my_domain}"
+            #     )
 
     print('Welcome to the opportunity hub')
 

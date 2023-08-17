@@ -4,7 +4,7 @@ from signup_login import signUp, logIn
 from fetch_jobs import get_jobs
 from send_to_email import send_email
 from user_info import get_professional_domain
-
+from fetch_from_db import search_user
 
 print('\t\t\t\t Welcome to opportunityHub Menu driven Application ')
 
@@ -48,28 +48,52 @@ def fetch_and_send_jobs():
 
     job_list = get_jobs(position, country)
     email = input('Enter your email: ')
-    send_email(email, job_list[:10], position)
+    if job_list:
+        send_email(email, job_list[:10], position)
+        # print(job_list)
+    else:
+        print(
+            f"There are no current openings for the position of a {position} in {country}")
+
+
+# def get_mentors(domain):
+#     with open('mentors.csv') as db:
+#         mentors = db.readlines()
+#         mentors_list = [arr.split(', ') for arr in mentors[1:]]
+
+#         your_mentors_list = []
+#         for mentor in mentors_list:
+#             if domain == mentor[-1].strip("\n"):
+#                 your_mentors_list.append(mentor)
+
+#         if your_mentors_list:
+#             print(
+#                 "Here's a list of mentors in your domain that are willing to mentor you\n")
+#             for mentor in your_mentors_list:
+#                 print([info.strip("\n") for info in mentor])
+#         else:
+#             print("""Oops, we currently don't have a mentor for you
+#                      Check back later
+#                 """)
 
 
 def get_mentors(domain):
-    with open('mentors.csv') as db:
-        mentors = db.readlines()
-        mentors_list = [arr.split(', ') for arr in mentors[1:]]
-
-        your_mentors_list = []
-        for mentor in mentors_list:
-            if domain == mentor[-1].strip("\n"):
-                your_mentors_list.append(mentor)
-
-        if your_mentors_list:
-            print(
-                "Here's a list of mentors in your domain that are willing to mentor you\n")
-            for mentor in your_mentors_list:
-                print([info.strip("\n") for info in mentor])
-        else:
-            print("""Oops, we currently don't have a mentor for you
-                     Check back later
-                """)
+    your_mentors_list = search_user(domain=domain, table="Mentors")
+    
+    if your_mentors_list:
+        print(
+            """
+            Here's a list of mentors in your domain that are willing to mentor you. 
+            You just have to reach out to any of them through their emails\n
+            """
+        )
+        print("FIRSTNAME | LASTNAME | EMAIL | JOB_PREFERENCES | EXPERIENCE_LEVEL | PROFESSIONAL_DOMAIN")
+        for mentor in your_mentors_list:
+            print(" ".join(list(mentor)))
+    else:
+        print("""Oops, we currently don't have a mentor for you
+                    Check back later
+            """)
 
 
 logged_in = False
@@ -93,6 +117,7 @@ while True:
             action = ask_for_action()
             if (action == '1'):
                 fetch_and_send_jobs()
+                print("\033[32mEmail Successfully sent !!! \033[0m")
             elif (action == '2'):
                 my_domain = get_professional_domain()
                 get_mentors(my_domain)
